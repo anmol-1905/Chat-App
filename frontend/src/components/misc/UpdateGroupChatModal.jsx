@@ -7,7 +7,7 @@ import axios from "axios";
 import UserListItem from "../UserAvatar/UserListItem";
 
 
-function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
+function UpdateGroupChatModal({fetchAgain, setFetchAgain, fetchMessages}) {
     const [groupChatName, setGroupChatName] = useState();
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState([]);
@@ -36,7 +36,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                 chatName: groupChatName
             }, config);
             setSelectedChat(data);
-            setFetchAgain(!fetctAgain);
+            setFetchAgain(!fetchAgain);
             setRenameloading(false);
             toast({
                 title: "Group name changed",
@@ -116,7 +116,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                 userId: user1._id
             }, config);
             setSelectedChat(data);
-            setFetchAgain(!fetctAgain);
+            setFetchAgain(!fetchAgain);
             setLoading(false);
             toast({
                 title: "User added",
@@ -169,7 +169,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                 userId: user1._id
             }, config);
             user1._id===user._id? setSelectedChat(): setSelectedChat(data);
-            setFetchAgain(!fetctAgain);
+            setFetchAgain(!fetchAgain);
             fetchMessages();
             setLoading(false);
             toast({
