@@ -31,7 +31,7 @@ function Login() {
                 }
             };
             const {data} = await axios.post(
-                "http://localhost:5000/api/user/login", 
+                `${process.env.BACKEND_API_ENDPOINT}/api/user/login`, 
                 {email, password},
                 config                          
             );

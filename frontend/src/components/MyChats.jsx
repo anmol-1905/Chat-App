@@ -18,7 +18,7 @@ function MyChats({fetchAgain}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.get("http://localhost:5000/api/chat", config);
+            const {data} = await axios.get(`${process.env.BACKEND_API_ENDPOINT}/api/chat`, config);
             setChats(data.result);
         }catch(err){
             toast({

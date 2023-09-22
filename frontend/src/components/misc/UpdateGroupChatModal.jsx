@@ -31,7 +31,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                 }
             };
             
-            const {data} = await axios.put(`http://localhost:5000/api/chat/rename`, {
+            const {data} = await axios.put(`${process.env.BACKEND_API_ENDPOINT}/api/chat/rename`, {
                 chatId: selectedChat._id,
                 chatName: groupChatName
             }, config);
@@ -69,7 +69,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.get(`http://localhost:5000/api/user/all-users?search=${search}`, config);
+            const {data} = await axios.get(`${process.env.BACKEND_API_ENDPOINT}/api/user/all-users?search=${search}`, config);
             setLoading(false);
             setSearchResult(data);
         } catch(err) {
@@ -111,7 +111,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.put(`http://localhost:5000/api/chat/addToGroup`, {
+            const {data} = await axios.put(`${process.env.BACKEND_API_ENDPOINT}/api/chat/addToGroup`, {
                 chatId: selectedChat._id,
                 userId: user1._id
             }, config);
@@ -164,7 +164,7 @@ function UpdateGroupChatModal({fetctAgain, setFetchAgain, fetchMessages}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.put(`http://localhost:5000/api/chat/removeFromGroup`, {
+            const {data} = await axios.put(`${process.env.BACKEND_API_ENDPOINT}/api/chat/removeFromGroup`, {
                 chatId: selectedChat._id,
                 userId: user1._id
             }, config);

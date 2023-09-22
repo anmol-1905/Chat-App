@@ -31,7 +31,7 @@ function GroupChatModel({children}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.get(`http://localhost:5000/api/user/all-users?search=${search}`, config);
+            const {data} = await axios.get(`${process.env.BACKEND_API_ENDPOINT}/api/user/all-users?search=${search}`, config);
             console.log(data);
             setLoading(false);
             setSearchResult(data);
@@ -64,7 +64,7 @@ function GroupChatModel({children}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.post("http://localhost:5000/api/chat/group", {
+            const {data} = await axios.post(`${process.env.BACKEND_API_ENDPOINT}/api/chat/group`, {
                 name: groupChatName,
                 users: JSON.stringify(selectedUsers.map(user=>user._id))
             }, config);
