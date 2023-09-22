@@ -9,7 +9,7 @@ import axios from "axios";
 import './styles.css';
 import ScrollableChat from "./ScrollableChat";
 import io from 'socket.io-client';
-const ENDPOINT = `${process.env.BACKEND_API_ENDPOINT}`;
+const ENDPOINT = `https://chat-app-2nq9.onrender.com`;
 var socket, selectedChatCompare;
 
 const SingleChat = ({fetchAgain, setFetchAgain})=> {
@@ -31,7 +31,7 @@ const SingleChat = ({fetchAgain, setFetchAgain})=> {
                 },
             };
             setLoading(true);
-            const {data} = await axios.get(`${process.env.BACKEND_API_ENDPOINT}/api/message/${selectedChat._id}`, config);
+            const {data} = await axios.get(`https://chat-app-2nq9.onrender.com/api/message/${selectedChat._id}`, config);
             setMessages(data);
             setLoading(false);
             socket.emit("join chat", selectedChat._id);
@@ -84,7 +84,7 @@ const SingleChat = ({fetchAgain, setFetchAgain})=> {
                     },
                 };
                 setNewMessage("");
-                const {data} = await axios.post(`${process.env.BACKEND_API_ENDPOINT}/api/message`, {
+                const {data} = await axios.post(`https://chat-app-2nq9.onrender.com/api/message`, {
                     content: newMessage,
                     chatId: selectedChat._id
                 }, config);

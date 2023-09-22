@@ -18,7 +18,7 @@ function MyChats({fetchAgain}) {
                     Authorization: `Bearer ${user.token}`
                 }
             };
-            const {data} = await axios.get(`${process.env.BACKEND_API_ENDPOINT}/api/chat`, config);
+            const {data} = await axios.get(`https://chat-app-2nq9.onrender.com/api/chat`, config);
             setChats(data.result);
         }catch(err){
             toast({

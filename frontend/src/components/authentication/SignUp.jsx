@@ -46,7 +46,7 @@ function Signup() {
                         "Content-type": "application/json"
                     }
                 };
-                const {data} = await axios.post(`${process.env.BACKEND_API_ENDPOINT}/api/user/register`, 
+                const {data} = await axios.post(`https://chat-app-2nq9.onrender.com/api/user/register`, 
                     {name, email, password, picture},
                     config                          
                 );

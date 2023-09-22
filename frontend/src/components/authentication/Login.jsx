@@ -31,7 +31,7 @@ function Login() {
                 }
             };
             const {data} = await axios.post(
-                `${process.env.BACKEND_API_ENDPOINT}/api/user/login`, 
+                "https://chat-app-2nq9.onrender.com/api/user/login", 
                 {email, password},
                 config                          
             );

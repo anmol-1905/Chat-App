@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://chat-app-2nq9.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,6 +17,7 @@
     "@emotion/styled": "^11.11.0",
     "axios": "^1.5.0",
     "cloudinary-react": "^1.8.1",
+    "dotenv": "^16.3.1",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
